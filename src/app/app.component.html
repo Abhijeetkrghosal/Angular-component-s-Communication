@@ -1,0 +1,117 @@
+<div class="container-fluid px-5">
+  <div class="col-12 text-center my-3 text-success">
+
+    <h3>Communication Between Template and class component</h3>
+  </div>
+  <div class="row text-center">
+    <div class="col-3 border">
+      <h3>1) Interpolation</h3>
+      {{title}}
+    </div>
+    <div class="col-3 border">
+      <h3>2) Property Binding </h3>
+      <img [src]="imgUrl" alt="image">
+    </div>
+    <div class="col-3 border">
+      <h3>3) Event Binding</h3>
+      <button (click)="incrementCOunt()">Click</button>
+      <p>clicked button {{count}} times</p>
+    </div>
+    <div class="col-3 border">
+      <h3>2-way Binding</h3>
+      <input type="text" [(ngModel)] = "name">
+      <p>Welcome {{name}}</p>
+    </div>
+  </div>
+  <div class="col-12 text-center my-3 text-success">
+
+    <h3>Communication Between Template and class component by using Getters And Setters</h3>
+  </div>
+  <div class="row text-center">
+
+    <div class="col-12 text-center border">
+      <h3>Using Getter and setter ( type Abhijeet for alert )</h3>
+      <input type="text" [(ngModel)] = "getsetName">
+      <p>Welcome {{name}}</p>
+    </div>
+  </div>
+  <div class="col-12 text-center my-3 text-success">
+
+    <h3>Communication Between Template and class component by using ViewChild (#nameref)</h3>
+  </div>
+  <div class="row text-center">
+
+    <div class="col-12 text-center border">
+      <h3>Using ViewChild ( focus is already there )</h3>
+      <input type="text"  #nameRef [(ngModel)] = "getsetName">
+      <p>Welcome {{name}}</p>
+    </div>
+  </div>
+  <div class="col-12 text-center my-3 text-success">
+
+    <h3 class="text-danger">Communication Between Different components</h3>
+  </div>
+  <div class="row text-center">
+
+    <div class="col-12 text-center border">
+  <app-child [isLoggedIn]="userLoggedIn" [message]="'using @Input'"></app-child>
+    </div>
+  </div>
+  <div class="col-12 text-center my-3 text-success">
+
+    <h3 class="text-danger">Communication Between Different components</h3>
+  </div>
+  <div class="row text-center">
+
+    <div class="col-12 text-center border">
+  <app-child [isLoggedIn]="userLoggedIn" [message]="'using Getters And Setters'" [loggedIn]="userLoggedIn"></app-child>
+    </div>
+  </div>
+  <div class="col-12 text-center my-3 text-success">
+
+    <h3 class="text-danger">Communication Between Parent child usng template referenc e variable</h3>
+  </div>
+  <div class="row text-center">
+
+    <div class="col-12 text-center border">
+  <app-child #checktemplatevariablename ></app-child>
+  {{checktemplatevariablename.templaterefvariable}}
+  <button (click)="checktemplatevariablename.templaterefvarmethod()">testtemplatevariablenamemethod</button>
+    </div>
+  </div>
+  <div class="col-12 text-center my-3 text-success">
+
+    <h3 class="text-danger">Communication between parent and child (child to parent)</h3>
+  </div>
+  <div class="row text-center">
+
+    <div class="col-12 text-center border">
+  <app-child  ></app-child>
+    </div>
+  </div>
+  <div class="col-12 text-center my-3 text-success">
+
+    <h3 class="text-primary">Communication between 2 different unrelated components(using Subject)</h3>
+    steps
+    <ul>
+      <li>
+        create a Subject and assign it to as an Observable.
+    </li>
+    <li>Send message from teacher to subject</li>
+    <li>subcribe to the subject from child component</li>
+  </ul>
+
+
+
+
+
+
+  <h1>Teacher</h1>
+  <app-service1></app-service1>
+  <app-service2></app-service2>
+</div>
+</div>
+
+
+
+

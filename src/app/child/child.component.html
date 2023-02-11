@@ -1,0 +1,13 @@
+<p>child works!</p>
+<p *ngIf="isLoggedIn">Welcome Abhijeet ( {{message}} )</p>
+<p *ngIf="!isLoggedIn">Please Log In ( {{message}} )</p>
+<ng-container *ngIf="setgetmessage">
+
+  child component rendering using get and set
+  {{setgetmessage}}
+</ng-container>
+<ng-container *ngIf="templaterefvariable">
+
+  child component rendering using ref variable:-
+  {{templaterefvariable}}
+</ng-container>
